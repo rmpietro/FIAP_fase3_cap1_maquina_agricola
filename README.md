@@ -63,17 +63,14 @@ Principais características:
 Dentre os arquivos e pastas presentes na raiz do projeto, definem-se:
 
 - <b>.github</b>: Nesta pasta ficarão os arquivos de configuração específicos do GitHub que ajudam a gerenciar e automatizar processos no repositório.
-
 - <b>assets</b>: aqui estão os arquivos relacionados a elementos não-estruturados deste repositório, como imagens.
-
-- <b>config</b>: Utilizada para armazenar arquivos de configuração do projeto, como o config.json, utilizado para as credenciais do Banco de Dados (não é a uma solução profissional adequada, mas atende aos requisitos acadêmicos do projeto).
-
 - <b>document</b>: não utilizada nesse projeto
-
 - <b>scripts</b>: não utilizada nesse projeto
-
 - <b>src</b>: Todo o código fonte criado para o desenvolvimento do projeto.
-
+- <b>src/config</b>: Utilizada para armazenar arquivos de configuração do projeto, como o config.json, utilizado para as credenciais do Banco de Dados (não é a uma solução profissional adequada, mas atende aos requisitos acadêmicos do projeto).
+- <b>src/dados</b>: Utilizada para armazenar arquivos de dados, como o arquivo JSON com os dados dos sensores.
+- <b>src/dashboard</b>: Utilizada para armazenar arquivos relacionados ao dashboard do projeto.
+- <b>src/R</b>: Utilizada para armazenar arquivos de scripts em R.
 - <b>README.md</b>: arquivo que serve como guia e explicação geral sobre o projeto (o mesmo que você está lendo agora).
 
 ## 🔧 Como executar o projeto
@@ -106,9 +103,12 @@ A saída do console do Wokwi está formatada como objetos JSON com os valores do
 
 6. O projeto irá solicitar seu usuário e senha para o banco de dados Oracle da FIAP. Após esse passo essas credenciais serão salvas no arquivo `config/config.json` para uso futuro. Da mesma forma, caso esse arquivo já exista, não solicitará as credenciais.
  
-7. Execute os itens 1 e 2 do menu para criar tabelas e inserir dados previamente coletados dos sensores no banco de dados Oracle.
+7. Execute os itens 1 e 2 do menu, nessa ordem, para criar tabelas e inserir dados previamente coletados dos sensores no banco de dados Oracle. Após a primeira execução, esses passos podem ser ignorados, mas de qualquer forma, se forem executados, verificarão a existência da estrutura e nada será duplicado.
 
-Nota: Certifique-se de ter acesso a um banco de dados Oracle da FIAP e as credenciais necessárias antes de executar o projeto.
+__Notas:__ 
+
+ - Certifique-se de ter acesso a um banco de dados Oracle da FIAP e as credenciais necessárias antes de executar o projeto;
+ - A execução do dashboard sobe um servidor interno web para exibição dos gráficos em formato HTML. Será preciso encerrar o programa e reexecutá-lo para voltar ao menu principal.
 
 ### Script R
 O script R executa análise estatística e preditiva exibindo tabelas e gráficos com os dados coletados.
