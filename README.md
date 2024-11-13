@@ -108,7 +108,7 @@ A saída do console do Wokwi está formatada como objetos JSON com os valores do
 __Notas:__ 
 
  - Certifique-se de ter acesso a um banco de dados Oracle da FIAP e as credenciais necessárias antes de executar o projeto;
- - A execução do dashboard sobe um servidor interno web para exibição dos gráficos em formato HTML. Será preciso encerrar o programa e reexecutá-lo para voltar ao menu principal.
+ - A execução do dashboard sobe um servidor interno web para exibição dos gráficos em formato HTML. Será preciso encerrar o programa e executá-lo novamente para voltar ao menu principal.
 
 ### Script R
 O script R executa análise estatística e preditiva exibindo tabelas e gráficos com os dados coletados.
