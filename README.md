@@ -76,7 +76,12 @@ Dentre os arquivos e pastas presentes na raiz do projeto, definem-se:
 
 - <b>README.md</b>: arquivo que serve como guia e explicação geral sobre o projeto (o mesmo que você está lendo agora).
 
-## 🔧 Como executar o código
+## 🔧 Como executar o projeto
+
+__Esse projeto parte da coleta de dados de sensores e armazenamento em um banco de dados Oracle, para posterior análise estatística e preditiva dos dados coletados.
+Os dados de sensores são coletados a partir do Wokwi copiando a saída em console gerada pelo código C++ e colando no arquivo `src/dados/dados_app.json`, especificamente no interior do nó chamado "leituras".
+A saída do console do Wokwi está formatada como objetos JSON com os valores dos sensores simulados.__
+
 
 1. Certifique-se de ter Python 3.7+ instalado em seu sistema.
 
@@ -93,14 +98,17 @@ Dentre os arquivos e pastas presentes na raiz do projeto, definem-se:
 
 4. Configure as credenciais do banco de dados Oracle no arquivo `config.json` ou siga as instruções durante a execução para criar o arquivo.
 
+
 5. Execute o script principal:
    ```
    python main.py
    ```
 
-6. Siga as instruções no menu para criar tabelas, inserir dados, iniciar o dashboard ou obter previsões de chuva.
+6. O projeto irá solicitar seu usuário e senha para o banco de dados Oracle da FIAP. Após esse passo essas credenciais serão salvas no arquivo `config/config.json` para uso futuro. Da mesma forma, caso esse arquivo já exista, não solicitará as credenciais.
+ 
+7. Execute os itens 1 e 2 do menu para criar tabelas e inserir dados previamente coletados dos sensores no banco de dados Oracle.
 
-Nota: Certifique-se de ter acesso a um banco de dados Oracle e as credenciais necessárias antes de executar o projeto.
+Nota: Certifique-se de ter acesso a um banco de dados Oracle da FIAP e as credenciais necessárias antes de executar o projeto.
 
 ### Script R
 O script R executa análise estatística e preditiva exibindo tabelas e gráficos com os dados coletados.
