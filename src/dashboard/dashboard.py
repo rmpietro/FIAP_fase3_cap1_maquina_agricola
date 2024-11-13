@@ -6,7 +6,7 @@ from dash.dependencies import Input, Output
 import plotly.express as px
 
 # Carregar configuração do banco de dados
-with open("config.json") as config_file:
+with open("config/config.json") as config_file:
     config = json.load(config_file)
 
 
