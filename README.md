@@ -35,8 +35,8 @@ Principais características:
 - Integração com previsão do tempo para otimização da irrigação
 - Interface de linha de comando para gerenciamento do sistema
 
-### Link youtube demonstrando funcionamento do projeto
-- [Link do vídeo](https://www.youtube.com)
+### Link YouTube demonstrando funcionamento do projeto
+- [Link para o vídeo não-listado](https://www.youtube.com/watch?v=D9-VJ27aex8)
 
 ### Diagrama eletrônico do projeto com ESP32
 <p align="center">
@@ -116,11 +116,15 @@ Ele deve ser executado de modo separado do programa em Python e preferencialment
 
 #### Para executar o script R:
 1. Abra o RStudio
-2. Escolha a opção source no canto superior esquerdo da janela de código e selecione o arquivo do script, localizado neste projeto na pasta:
-
-``` 
-src/R/analysis_stats.R
-```
+2. Abra o arquivo do script R:
+   ```
+   src/R/analysis_stats.R
+   ```
+3. Ajuste a última linha deste arquivo para refletir o caminho completo do arquivo `dados_app.json` no seu sistema:
+   ```
+   run_analysis("<Caminho completo na sua máquina usando barras "/">dados_app.json")
+   ```
+4. Escolha a opção __source__ no canto superior esquerdo da janela de código e o código será executado.
 
 ## 🗃 Histórico de lançamentos
 

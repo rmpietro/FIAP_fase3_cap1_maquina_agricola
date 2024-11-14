@@ -9,11 +9,8 @@ import plotly.express as px
 with open("config/config.json") as config_file:
     config = json.load(config_file)
 
-
 # Função para conectar ao banco e carregar dados da tabela leituras
 def load_data():
-    # oracledb.init_oracle_client(lib_dir=None)
-    #
     with oracledb.connect(
             user=config['user'],
             password=config['password'],
@@ -21,7 +18,7 @@ def load_data():
     ) as connection:
         query = """
             SELECT timestamp, temp, humid, P, K, pH, estado_irrigacao
-            FROM leituras
+            FROM LEITURAS
             ORDER BY timestamp
         """
         # Lê os dados e converte as colunas para minúsculas
@@ -35,6 +32,7 @@ app = Dash(__name__)
 app.title = "Dashboard de Leituras de Sensores"
 
 # Carregar os dados
+
 df = load_data()
 
 # Layout do Dashboard

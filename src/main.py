@@ -2,28 +2,28 @@ import oracledb
 import json
 import requests
 import pandas as pd
-
-from dashboard.dashboard import app as dashboard_app
 from src.db_crud import read_table, create_tipo_cultura, create_area_cultivo, create_sensor, create_leitura
-
 
 # Conexão ao Oracle com entrada de credenciais
 def connect_to_db():
     try:
         with open("config/config.json") as config_file:
             config = json.load(config_file)
+            print("------Programa de Monitoramento de Culturas------\n")
         return oracledb.connect(
             user=config['user'],
             password=config['password'],
             dsn=config['dsn']
         )
     except FileNotFoundError:
+
+        print("------Programa de Monitoramento de Culturas------\n")
+
         username = input("Digite o usuário do banco de dados: ")
         password = input("Digite a senha do banco de dados: ")
         dsn = "oracle.fiap.com.br:1521/ORCL"
         criar_config_json(username, password, dsn)
         return oracledb.connect(user=username, password=password, dsn=dsn)
-
 
 def criar_config_json(user, password, dsn, filename="config/config.json"):
     config_data = {
@@ -35,9 +35,7 @@ def criar_config_json(user, password, dsn, filename="config/config.json"):
     with open(filename, "w") as config_file:
         json.dump(config_data, config_file, indent=2)
 
-    print(f"Arquivo '{filename}' criado com sucesso no diretório atual.")
-
-from src.db_crud import read_table, create_tipo_cultura, create_area_cultivo, create_sensor, create_leitura
+    print(f"Arquivo '{filename}' criado com sucesso no diretório src/config.")
 
 # Função para ler o DDL e criar as tabelas no Banco de Dados
 def create_tables(connection):
@@ -159,7 +157,9 @@ def main_menu():
             json_file_path = 'dados/dados_app.json'
             insert_data_from_json(connection, json_file_path)
         elif choice == "3":
+            from dashboard.dashboard import app as dashboard_app
             dashboard_app.run_server(debug=False)
+            print("Dashboard não implementado.")
         elif choice == "4":
             get_chuva_previsao()
         elif choice == "5":
